@@ -2,6 +2,7 @@ import {
   INCREMENT,
   DECREMENT,
   INCREMENT_WITH_PARAMS,
+  DECREMENT_WITH_PARAMS,
 } from "../actions/actions";
 
 const initialState = {
@@ -16,6 +17,8 @@ export const Reducer = (state = initialState, action) => {
       return { counter: state.counter - 1 };
     case INCREMENT_WITH_PARAMS:
       return { counter: state.counter + action.number };
+       case DECREMENT_WITH_PARAMS:
+      return { counter: state.counter - action.number };
     default:
       return state;
   }
