@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   decrement,
   increment,
+  Reset,
   incrementWithParams,
   decrementWithParams,
 } from "./state_managment/actions/actions";
@@ -13,6 +14,7 @@ export const CounterRedux = () => {
   const handleDecrementation = () => dispatch(decrement());
   const handleIncrementWithParams = () => dispatch(incrementWithParams(10));
   const handleDecrementWithParams = () => dispatch(decrementWithParams(10));
+  const handleReset = () => dispatch(Reset());
 
   return (
     <>
@@ -33,6 +35,12 @@ export const CounterRedux = () => {
         style={{ marginLeft: "1rem" }}
       >
         decrement With Params
+      </button>
+      <button
+        onClick={handleReset}
+        style={{ marginLeft: "1rem" }}
+      >
+        Reset counter
       </button>
     </>
   );
